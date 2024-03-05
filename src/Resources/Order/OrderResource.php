@@ -1,6 +1,6 @@
 <?php
 
-namespace MCris112\Billable\Resources;
+namespace MCris112\Billable\Resources\Order;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -23,13 +23,13 @@ class OrderResource extends JsonResource
                 'id' => $this->preference_id
             ],
 
-            'items' => $this->items,
+            'items' => OrderContentItemResource::collection($this->items),
 
-            'totals' => [
-                'code' => $this->totals_currency_code,
-                'discount' => $this->totals_discount,
-                'amount' => $this->totals_amount
-            ],
+//            'totals' => [
+//                'code' => $this->totals_currency_code,
+//                'discount' => $this->totals_discount,
+//                'amount' => $this->totals_amount
+//            ],
 
             'timestamps' => [
                 'createdAt' => $this->created_at,

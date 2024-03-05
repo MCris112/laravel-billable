@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('preference_id')->nullable();
             $table->longText('preference_content')->nullable();
 //            $table->string('state')->nullable();
-            $table->string('totals_currency_code');
-            $table->double('totals_discount')->nullable();
-            $table->double('totals_amount');
+
+            //I took it out for now
+//            $table->string('totals_currency_code');
+//            $table->double('totals_discount')->nullable();
+//            $table->double('totals_amount');
 
             $table->timestamps();
 

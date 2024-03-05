@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('orderable_id');
 
             $table->integer('quantity');
-            $table->double('price');
 
             $table->timestamps();
 
