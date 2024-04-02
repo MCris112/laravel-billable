@@ -1,6 +1,6 @@
 {
     "name": "mcris112/billable",
-    "description": "Laravel Package for Billing, Orders, Subscriptions manager",
+    "description": "Laravel Package for Billing, Orders, Subscriptions manager - local",
     "keywords": ["laravel", "laravel-packages", "billing", "mercadopago", "izipay", "transaction", "orders"],
     "license": "MIT",
     "authors": [
@@ -24,10 +24,10 @@
         }
     },
     "require": {
-        "php": "^8.1"
+        "php": "^8.1",
+        "mercadopago/dx-php": "3.0.3"
     },
     "config": {
         "sort-packages": true
-    },
-    "minimum-stability": "dev"
+    }
 }

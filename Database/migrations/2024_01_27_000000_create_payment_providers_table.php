@@ -16,16 +16,22 @@ return new class extends Migration
             $table->string('tax_type');
             $table->double('tax_amount');
 
+            $table->string('currency_support');
+
             $table->longText('options')->nullable();
 
             $table->boolean('active')->default(true);
         });
 
-        DB::table(config('billable.table.prefix').'payment_providers')->insert([
-            'id' => 'mercadopago',
-            'name' => 'MercadoPago',
-            'tax_type' => 'percent',
-            'tax_amount' => 6.0
-        ]);
+        foreach ( config('billable.providers', []) as $name => $provider)
+        {
+            DB::table(config('billable.table.prefix').'payment_providers')->insert([
+                'id' => $name,
+                'name' => $provider["name"],
+                'tax_type' => $provider["tax"]["type"],
+                'tax_amount' => $provider["tax"]["amount"],
+                'currency_support' => implode(":", $provider["currencies"])
+            ]);
+        }
     }
 };
