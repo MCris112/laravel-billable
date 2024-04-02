@@ -15,9 +15,10 @@
 2. [Usage](#usage)
    1. [Order](#order)
       1. [Get](#orderget)
-      2. [Create](#ordercreate)
-      3. [Item](#orderitem)
-      4. [toResource()](#order-toresource)
+      2. [Get](#orderget-a-nameorder-geta)
+      3. [Create](#ordercreate)
+      4. [Item](#orderitem)
+      5. [toResource()](#order-toresource)
 
 ### Payment Supports
 * MercadoPago

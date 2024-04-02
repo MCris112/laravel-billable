@@ -5,7 +5,10 @@ namespace MCris112\Billable\Traits;
 use Illuminate\Http\Resources\Json\JsonResource;
 use MCris112\Billable\Exceptions\CurrencyInPriceNotFoundException;
 use MCris112\Billable\Models\Price;
+<<<<<<< HEAD
 use MCris112\Billable\Resources\PriceResource;
+=======
+>>>>>>> 34d161ba1c6e9416b13b5d5d700f64195f3c9443
 
 trait Priceable
 {
@@ -41,11 +44,14 @@ trait Priceable
         return $this->morphMany(Price::class, "priceable");
     }
 
+<<<<<<< HEAD
     public function pricesToResource(): array
     {
         return PriceResource::parse($this->prices);
     }
 
+=======
+>>>>>>> 34d161ba1c6e9416b13b5d5d700f64195f3c9443
     /**
      * Transform into a resource
      * Remember to delete the "prices" relation in the resource
