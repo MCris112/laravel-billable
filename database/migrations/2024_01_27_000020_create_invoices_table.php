@@ -33,7 +33,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('customer_id')->references('id')->on( config('billable.table.users') );
-            $table->foreign('payment_provider_id')->references('id')->on( config('billable.table.prefix').'payment_providers' );
+            $table->foreign('payment_provider_id')->references('id')->on( config('billable.table.prefix').'payment_method_providers' );
         });
     }
 };

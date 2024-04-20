@@ -1,6 +1,6 @@
 <?php
 
-namespace MCris112\Billable\Enums;
+namespace Enums;
 
 enum StatusIs: string
 {

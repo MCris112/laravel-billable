@@ -4,7 +4,6 @@ namespace MCris112\Billable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use MCris112\Billable\Traits\Priceable;
 
 /**
  * MCris112\Billable\Models\OrderItem
@@ -16,7 +15,7 @@ use MCris112\Billable\Traits\Priceable;
  * @property int $quantity
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read Model|\Eloquent|Priceable $orderable
+ * @property-read Model|\Eloquent $orderable
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem query()
@@ -36,6 +35,18 @@ class OrderItem extends Model
         'orderable_id',
         'quantity',
     ];
+
+    public static function base(Model $model, int $quantity): self
+    {
+        $item = new self([
+            'orderable_type' => $model->getMorphClass(),
+            'orderable_id' => $model->getKey(),
+            'quantity' => $quantity
+        ]);
+
+        return $item;
+    }
+
     public function getTable(): string
     {
         return config('billable.table.prefix').'order_items';

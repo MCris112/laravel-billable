@@ -1,12 +1,12 @@
 <?php
 
-namespace MCris112\Billable\Base;
+namespace Base;
 
+use Contracts\PaymentMethodDriver;
 use Illuminate\Support\Collection;
-use MCris112\Billable\Contracts\PaymentMethodDriver;
 use MCris112\Billable\Models\Order;
 use MCris112\Billable\Models\OrderItem;
-use MCris112\Billable\Models\PaymentProvider;
+use MCris112\Billable\Models\PaymentMethodProvider;
 
 abstract class AbstractPaymentMethod implements  PaymentMethodDriver
 {
@@ -24,7 +24,7 @@ abstract class AbstractPaymentMethod implements  PaymentMethodDriver
         return static::$URL_PRODUCTION.$endPoint;
     }
 
-    public function __construct(protected string $currency, protected PaymentProvider $model)
+    public function __construct(protected string $currency, protected PaymentMethodProvider $model)
     {
 
     }

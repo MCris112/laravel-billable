@@ -5,7 +5,7 @@ namespace MCris112\Billable\Traits;
 use Illuminate\Http\Resources\Json\JsonResource;
 use MCris112\Billable\Exceptions\CurrencyInPriceNotFoundException;
 use MCris112\Billable\Models\Price;
-use MCris112\Billable\Resources\PriceResource;
+use Resources\PriceResource;
 
 trait Priceable
 {

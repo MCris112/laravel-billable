@@ -9,7 +9,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create(config('billable.table.prefix').'payment_providers', function (Blueprint $table) {
+        Schema::create(config('billable.table.prefix').'payment_method_providers', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
 
@@ -18,14 +18,20 @@ return new class extends Migration
 
             $table->string('currency_support');
 
+            $table->string('client_id')->nullable();
+            $table->string('client_secret')->nullable();
+
+//            $table->string('url_success');
+//            $table->string('url_failure');
+
             $table->longText('options')->nullable();
 
-            $table->boolean('active')->default(true);
+            $table->boolean('active')->default(false);
         });
 
         foreach ( config('billable.providers', []) as $name => $provider)
         {
-            DB::table(config('billable.table.prefix').'payment_providers')->insert([
+            DB::table(config('billable.table.prefix').'payment_method_providers')->insert([
                 'id' => $name,
                 'name' => $provider["name"],
                 'tax_type' => $provider["tax"]["type"],

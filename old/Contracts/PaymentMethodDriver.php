@@ -1,9 +1,9 @@
 <?php
 
-namespace MCris112\Billable\Contracts;
+namespace Contracts;
 
 use MCris112\Billable\Models\Order;
-use MCris112\Billable\Models\PaymentProvider;
+use MCris112\Billable\Models\PaymentMethodProvider;
 
 interface PaymentMethodDriver
 {
@@ -12,7 +12,7 @@ interface PaymentMethodDriver
      * Set the currency to use when creating the PaymentMethodDriver
      * @param string $currency
      */
-    public function __construct(string $currency, PaymentProvider $model);
+    public function __construct(string $currency, PaymentMethodProvider $model);
 
     /**
      * Return Preference after generate with the payment method driver selected

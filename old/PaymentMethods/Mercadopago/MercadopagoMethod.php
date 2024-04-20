@@ -1,10 +1,10 @@
 <?php
 
-namespace MCris112\Billable\PaymentMethods\Mercadopago;
+namespace PaymentMethods\Mercadopago;
 
+use Base\AbstractPaymentMethod;
+use Base\AbstractPreference;
 use Illuminate\Support\Collection;
-use MCris112\Billable\Base\AbstractPaymentMethod;
-use MCris112\Billable\Base\AbstractPreference;
 use MCris112\Billable\Exceptions\CurrencyInPriceNotFoundException;
 use MCris112\Billable\Models\Order;
 use MCris112\Billable\Models\OrderItem;

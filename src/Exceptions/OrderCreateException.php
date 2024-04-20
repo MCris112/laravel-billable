@@ -3,7 +3,6 @@
 namespace MCris112\Billable\Exceptions;
 
 use Exception;
-use Illuminate\Http\Request;
 use Throwable;
 
 class OrderCreateException extends Exception

@@ -1,15 +1,15 @@
 <?php
 
-namespace MCris112\Billable\PaymentMethods\Paypal;
+namespace PaymentMethods\Paypal;
 
+use Base\AbstractPaymentMethod;
+use Base\AbstractPreference;
 use Illuminate\Support\Collection;
-use MCris112\Billable\Base\AbstractPaymentMethod;
-use MCris112\Billable\Base\AbstractPreference;
 use MCris112\Billable\Exceptions\CurrencyInPriceNotFoundException;
 use MCris112\Billable\Models\Order;
 use MCris112\Billable\Models\OrderItem;
-use MCris112\Billable\PaymentMethods\Paypal\Resources\AccessToken;
-use MCris112\Billable\PaymentMethods\Paypal\Resources\OrderClient;
+use PaymentMethods\Paypal\Resources\AccessToken;
+use PaymentMethods\Paypal\Resources\OrderClient;
 
 class PaypalMethod extends AbstractPaymentMethod
 {

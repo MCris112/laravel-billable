@@ -1,8 +1,8 @@
 <?php
 
-namespace MCris112\Billable\PaymentMethods\Mercadopago;
+namespace PaymentMethods\Mercadopago;
 
-use MCris112\Billable\Base\AbstractPreference;
+use Base\AbstractPreference;
 use MercadoPago\Resources\Preference;
 
 class MercadoPagoPreference extends AbstractPreference

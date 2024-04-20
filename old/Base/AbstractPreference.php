@@ -1,6 +1,6 @@
 <?php
 
-namespace MCris112\Billable\Base;
+namespace Base;
 
 abstract class AbstractPreference
 {

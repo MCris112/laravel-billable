@@ -12,21 +12,21 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->unsignedBigInteger('user_id');
 
-//            $table->string('payment_provider_id');
+            $table->string('payment_method_provider_id');
 //
             $table->string('preference_id')->nullable();
             $table->longText('preference_content')->nullable();
 //            $table->string('state')->nullable();
 
             //I took it out for now
-//            $table->string('totals_currency_code');
-//            $table->double('totals_discount')->nullable();
-//            $table->double('totals_amount');
+            $table->string('totals_currency_code');
+            $table->double('totals_discount')->nullable();
+            $table->double('totals_amount');
 
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on( config('billable.table.users') );
-//            $table->foreign('payment_provider_id')->references('id')->on( config('billable.table.prefix').'payment_providers' );
+            $table->foreign('payment_method_provider_id')->references('id')->on( config('billable.table.prefix').'payment_method_providers' );
         });
     }
 };

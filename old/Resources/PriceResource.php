@@ -1,6 +1,6 @@
 <?php
 
-namespace MCris112\Billable\Resources;
+namespace Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

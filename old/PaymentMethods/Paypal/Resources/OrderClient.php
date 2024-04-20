@@ -1,9 +1,9 @@
 <?php
 
-namespace MCris112\Billable\PaymentMethods\Paypal\Resources;
+namespace PaymentMethods\Paypal\Resources;
 
 use Illuminate\Support\Facades\Http;
-use MCris112\Billable\PaymentMethods\Paypal\PaypalMethod;
+use PaymentMethods\Paypal\PaypalMethod;
 
 class OrderClient
 {
